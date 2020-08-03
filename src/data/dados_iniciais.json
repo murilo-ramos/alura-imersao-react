@@ -1,0 +1,122 @@
+{
+  "categorias": [
+    {
+      "titulo": "Disney",
+      "link": "https://www.disney.com",
+      "cor": "#6BD1FF",
+      "link_extra": {
+        "text": "Músicas dos filmes Disney",
+        "url": "https://www.disney.com"
+      },
+      "videos": [
+        {
+          "titulo": "Frozen 2 - Minha Intuição",
+          "url": "https://www.youtube.com/watch?v=wUX_4mNn22c",
+          "descricao_do_video": "Vídeo completo da música 'Minha Intuição' de Frozen 2, a versão em português da música 'Into The Unknown', escrita pelos ganhadores do Oscar, Kristen Anderson-Lopez e Robert Lopez. "
+        },
+        {
+          "titulo": "Moana - Saber quem eu sou",
+          "url": "https://www.youtube.com/watch?v=mUVUmG9vOFw"
+        },
+        {
+          "titulo": "A bela e a fera - Sentimentos são",
+          "url": "https://www.youtube.com/watch?v=Ki4_xl9NsWo"
+        },
+        {
+          "titulo": "Frozen - Let it Go",
+          "url": "https://www.youtube.com/watch?v=YVVTZgwYwVo"
+        },
+        {
+          "titulo": "Enrolados - Vejo enfim a luz brilhar",
+          "url": "https://www.youtube.com/watch?v=NZTt3-BgVzw"
+        },
+        {
+          "titulo": "Frozen 2 - Vem mostrar",
+          "url": "https://www.youtube.com/watch?v=u-VMMQA-d5U"
+        }
+      ]
+    },
+    {
+      "titulo": "Nickelodeon",
+      "cor": "orange",
+      "link_extra": {
+        "text": "Desenhos da Nick Jr",
+        "url": "https://www.nickelodeon.com.br"
+      },
+      "videos": [
+        {
+          "titulo": "Patrulha Canina - Ao resgate!!!",
+          "url": "https://www.youtube.com/watch?v=VXzPicGH5sU"
+        },
+        {
+          "titulo": "Blaze and the monsters machines - Momentos musicais",
+          "url": "https://www.youtube.com/watch?v=CVxGCspRdTU"
+        },
+        {
+          "titulo": "Patrulha Canina - Super filhotes",
+          "url": "https://www.youtube.com/watch?v=gOxamH3JMJs"
+        },
+        {
+          "titulo": "Dora aventureira",
+          "url": "https://www.youtube.com/watch?v=90BrxsqFbmo"
+        },
+        {
+          "titulo": "Blaze and the monsters machines - Força de Robô",
+          "url": "https://www.youtube.com/watch?v=XQUIWIcgmi4"
+        }
+      ]
+    },
+    {
+      "titulo": "Histórias",
+      "cor": "#9cd33b",
+      "link_extra": {
+        "text": "Varal de histórias",
+        "url": "https://www.youtube.com/channel/UCzPvR5EslYq2S-BTmxZl_iQ"
+      },
+      "videos": [
+        {
+          "titulo": "João sem medo",
+          "url": "https://www.youtube.com/watch?v=SYPY4iXCl2Y"
+        },
+        {
+          "titulo": "O gato xadrez",
+          "url": "https://www.youtube.com/watch?v=ONs1ECdcxBY"
+        },
+        {
+          "titulo": "A boca do sapo",
+          "url": "https://www.youtube.com/watch?v=PecxHQb1qV0"
+        },
+        {
+          "titulo": "O ratinho curioso",
+          "url": "https://www.youtube.com/watch?v=nmNJUufaFsI"
+        }
+      ]
+    },
+    {
+      "titulo": "Diversos",
+      "cor": "red",
+      "videos": [
+        {
+          "titulo": "Borboletinha",
+          "url": "https://www.youtube.com/watch?v=28iW_O5qWfU"
+        },
+        {
+          "titulo": "Pocoyo",
+          "url": "https://www.youtube.com/watch?v=D6CV3MFCSrA"
+        },
+        {
+          "titulo": "Masha e o urso",
+          "url": "https://www.youtube.com/watch?v=VSfoV_xrh78"
+        },
+        {
+          "titulo": "Pets - A vida secreta dos bichos",
+          "url": "https://www.youtube.com/watch?v=4vzzsQQ48RA"
+        },
+        {
+          "titulo": "Minions",
+          "url": "https://www.youtube.com/watch?v=eisKxhjBnZ0"
+        }
+      ]
+    }
+  ]
+}
