@@ -1,96 +1,120 @@
-import React, { useState } from 'react';
-import PageDefault from '../../../components/PageDefault';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
-    const [categorias, setCategorias] = useState([]);
+  const [categorias, setCategorias] = useState([]);
 
-    const valoresIniciais = {
-        nome: '',
-        descricao: '',
-        cor: '#000'
-    };
+  const valoresIniciais = {
+    nome: '',
+    descricao: '',
+    cor: '#000',
+  };
 
-    const [categoria, setCategoria] = useState(valoresIniciais);
+  const [categoria, setCategoria] = useState(valoresIniciais);
 
-    function handleFormSubmit(info) {
-        info.preventDefault();
-                    
+  function handleFormSubmit(info) {
+    info.preventDefault();
+
+    setCategorias([
+      ...categorias,
+      categoria,
+    ]);
+
+    setCategoria(valoresIniciais);
+  }
+
+  function setCampoCategoria(campo, valor) {
+    // categoria[campo] = valor; NAO FUNCIONA
+    // setCategoria(categoria);
+
+    // provavelmente precisa ser objeto novo
+    setCategoria({
+      ...categoria,
+      [campo]: valor,
+    });
+  }
+
+  function handleInputChange(info) {
+    // da pra desestruturar o objeto, mas nao vou fazer isso
+    setCampoCategoria(info.target.getAttribute('name'), info.target.value);
+  }
+
+  useEffect(() => {
+    const URL = 'http://localhost:8080/categorias';
+    fetch(URL)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
         setCategorias([
-            ...categorias,
-            categoria
+          ...resposta,
         ]);
+      });
+  }, []);
 
-        setCategoria(valoresIniciais);
-    };
+  return (
+    <PageDefault>
+      <h1>
+        Cadastro de Categoria:
+        {categoria.nome}
+      </h1>
 
-    function setCampoCategoria(campo, valor) {
-        //categoria[campo] = valor; NAO FUNCIONA
-        //setCategoria(categoria);
+      <form onSubmit={handleFormSubmit}>
+        <FormField
+          label="Nome:"
+          type="text"
+          name="nome"
+          value={categoria.nome}
+          onChange={handleInputChange}
+        />
 
-        //provavelmente precisa ser objeto novo
-        setCategoria({
-            ...categoria,
-            [campo]: valor,
-        });
-    };
+        <FormField
+          label="Descrição:"
+          type="textarea"
+          name="descricao"
+          value={categoria.descricao}
+          onChange={handleInputChange}
+        />
 
-    function handleInputChange(info) {
-        // da pra desestruturar o objeto, mas nao vou fazer isso
-        setCampoCategoria(info.target.getAttribute('name'), info.target.value);
+        <FormField
+          label="Cor:"
+          type="color"
+          name="cor"
+          value={categoria.cor}
+          onChange={handleInputChange}
+        />
 
-    }
+        <Button>
+          Cadastrar
+        </Button>
+      </form>
 
-    return (
-        <PageDefault>
-            <h1>Cadastro de Categoria: {categoria.nome}</h1>
+      {categorias.length === 0 && (
+        <div>
+          Carregando...
+        </div>
+      )}
 
-            <form onSubmit={handleFormSubmit}>
-                <FormField
-                    label="Nome:"
-                    type="text"
-                    name="nome"
-                    value={categoria.nome}
-                    onChange={handleInputChange}
-                />
+      <ul>
+        {categorias.map((itemCategoria) => (
+          <li key={`${itemCategoria.nome}${itemCategoria.id}`}>
+            {itemCategoria.nome}
+            {' '}
+            -
+            {itemCategoria.descricao}
+            {' '}
+            -
+            {itemCategoria.cor}
+          </li>
+        ))}
+      </ul>
 
-                <FormField
-                    label="Descrição:"
-                    type="textarea"
-                    name="descricao"
-                    value={categoria.descricao}
-                    onChange={handleInputChange}
-                />
-
-                <FormField
-                    label="Cor:"
-                    type="color"
-                    name="cor"
-                    value={categoria.cor}
-                    onChange={handleInputChange}
-                />
-
-                <button>
-                    Cadastrar
-                </button>
-            </form>
-
-            <ul>
-                {categorias.map((categoria, index) => {
-                    return (
-                        <li key={`${categoria.nome}${index}`}>
-                            {categoria.nome} - {categoria.descricao} - {categoria.cor}
-                        </li>
-                    )
-                })}
-            </ul>
-
-            <Link to="/">
-                Ir para home
-            </Link>
-        </PageDefault>
-    )
+      <Link to="/">
+        Ir para home
+      </Link>
+    </PageDefault>
+  );
 }
 
 export default CadastroCategoria;
