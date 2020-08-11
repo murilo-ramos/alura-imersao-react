@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../Button/index';
 
 export const LogoImage = styled.img`
     max-width: 168px;
@@ -29,5 +30,27 @@ export const MenuWrapper = styled.nav`
     @media(max-width: 800px) {
         height: 40px;
         justify-content: center;
+    }
+`;
+
+export const ButtonLink = styled(Button)`
+    @media(max-width: 800px) {
+        position: fixed;
+        left: 0;
+        right: bottom;
+        bottom: 0;
+        width: 100%;
+
+        background-color: var(--primary);
+        color: var(--white);
+        outline: 0;
+        text-align: center;
+        border: 0;
+        border-radius: 0;
+
+        &:hover,
+        &:focus {
+            opacity: 1
+        }
     }
 `;

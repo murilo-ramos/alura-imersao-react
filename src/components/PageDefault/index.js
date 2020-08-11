@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PageWrapper } from './style.js'
+import { PageWrapper } from './style';
 import Menu from '../Menu';
 import Footer from '../Footer';
 
@@ -14,15 +14,15 @@ const Main = styled.main`
 `;
 
 function PageDefault({ children }) {
-    return (
-        <PageWrapper>
-            <Menu/>
-            <Main>
-               {children}
-            </Main>
-            <Footer/>
-        </PageWrapper>
-    );
+  return (
+    <PageWrapper>
+      <Menu />
+      <Main>
+        {children}
+      </Main>
+      <Footer />
+    </PageWrapper>
+  );
 }
 
 export default PageDefault;

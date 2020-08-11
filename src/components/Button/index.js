@@ -13,23 +13,8 @@ const Button = styled.button`
 
     &:hover,
     &:focus {
-        opacity: .5
-    }
-
-    @media(max-width: 800px) {
-        position: fixed;
-        left: 0;
-        right: bottom;
-        bottom: 0;
-        width: 100%;
-
-        background-color: var(--primary);
-        color: var(--white);
-        outline: 0;
-        text-align: center;
-        border: 0;
-        border-radius: 0;
-
+        opacity: .5;
+        cursor: pointer;
     }
 `;
 

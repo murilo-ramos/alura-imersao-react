@@ -133,9 +133,3 @@ ContentAreaContainer.Category = styled.h1`
     padding: 10px;
   }
 `;
-
-
-
-
-
-

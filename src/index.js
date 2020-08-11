@@ -6,27 +6,27 @@ import Home from './pages/Home';
 import CadastroVideo from './pages/cadastro/Video';
 import CadastroCategoria from './pages/cadastro/Categoria';
 
-//refatorar para componente, desafio master blaster na descrição
+// refatorar para componente, desafio master blaster na descrição
 function Pagina404() {
   return (
     <div>404</div>
-  )
+  );
 }
 
-//Route path exact -> path exato
+// Route path exact -> path exato
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={Home} exact/>
-      <Route path="/cadastro/video" component={CadastroVideo}/>
-      <Route path="/cadastro/categoria" component={CadastroCategoria}/>
-      <Route component={Pagina404}/>
+      <Route path="/" component={Home} exact />
+      <Route path="/cadastro/video" component={CadastroVideo} />
+      <Route path="/cadastro/categoria" component={CadastroCategoria} />
+      <Route component={Pagina404} />
     </Switch>
   </BrowserRouter>,
 
-  /*<React.StrictMode>
+  /* <React.StrictMode>
     <App />
-  </React.StrictMode>,*/
-  document.getElementById('root')
+  </React.StrictMode>, */
+  document.getElementById('root'),
 );

@@ -38,7 +38,7 @@ const Input = styled.input`
   color: #F5F5F5;
   display: block;
   width: 100%;
-  height: 57px;
+  height: 60px;
   font-size: 18px;
   
   outline: 0;
@@ -70,17 +70,30 @@ const Input = styled.input`
 `;
 
 function FormField({
-  label, type, name, value, onChange,
+  label, type, name, value, onChange, options,
 }) {
   const fieldId = `id_${name}`;
-  const isTypeTextArea = type === 'textarea';
-  const tag = isTypeTextArea ? 'textarea' : 'input';
+  let tag = '';
+
+  switch (type) {
+    case 'textarea':
+      tag = 'textarea';
+      break;
+    case 'combobox':
+      tag = 'select';
+      break;
+    default:
+      tag = 'input';
+  }
 
   const hasValue = value.length > 0;
+  const hasOptions = options.length > 0;
 
   return (
     <FormFieldWrapper>
       <Label htmlFor={fieldId}>
+        {type !== 'combobox'
+        && (
         <Input
           as={tag}
           type={type}
@@ -89,6 +102,28 @@ function FormField({
           hasValue={hasValue}
           onChange={onChange}
         />
+        )}
+        {type === 'combobox'
+        && (
+        <Input
+          as={tag}
+          type={type}
+          name={name}
+          value={value}
+          hasValue={hasValue}
+          onChange={onChange}
+        >
+          {
+            (hasOptions && type === 'combobox') && (
+              options.map((option) => (
+                <option value={option.id} key={`combobox_option_${option.id}`}>
+                  {option.value}
+                </option>
+              ))
+            )
+          }
+        </Input>
+        )}
         <Label.Text>
           {label}
         </Label.Text>
@@ -101,6 +136,11 @@ FormField.defaultProps = {
   type: 'text',
   value: '',
   onChange: () => {},
+  options: [
+    { id: '', value: '' },
+    { id: 1, value: 'Teste1' },
+    { id: 2, value: 'Teste2' },
+  ],
 };
 
 FormField.propTypes = {
@@ -108,6 +148,7 @@ FormField.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.object),
   onChange: PropTypes.func,
 };
 
