@@ -17,21 +17,13 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 }
 
-function buildMainBanner(flixData) {
+function randomizeVideo(flixData) {
   const categoriaId = getRandomInt(0, flixData.length - 1);
   const videoId = getRandomInt(0, flixData[categoriaId].videos.length - 1);
 
   const video = flixData[categoriaId].videos[videoId];
 
-  return (
-    <div key="banner_main">
-      <BannerMain
-        videoTitle={video.titulo}
-        url={video.url}
-        videoDescription={video.descricao_do_video}
-      />
-    </div>
-  );
+  return video;
 }
 
 export const LoadingMainContainer = styled(BannerMainContainer)`
@@ -41,10 +33,17 @@ export const LoadingMainContainer = styled(BannerMainContainer)`
 
 function Home() {
   const [flixData, setFlixData] = useState([]);
+  const [mainVideo, setMainVideo] = useState();
+
+  function setMainContainerVideo(video) {
+    setMainVideo(video);
+    window.scrollTo(0, 0);
+  }
 
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
       .then((categoriasComVideos) => {
+        setMainVideo(randomizeVideo(categoriasComVideos));
         setFlixData(categoriasComVideos);
       })
       .catch((ex) => {
@@ -65,7 +64,13 @@ function Home() {
           </div>
         )
         : (
-          buildMainBanner(flixData)
+          <div key="banner_main">
+            <BannerMain
+              videoTitle={mainVideo.titulo}
+              url={mainVideo.url}
+              videoDescription={mainVideo.descricao}
+            />
+          </div>
         )
       }
 
@@ -73,6 +78,7 @@ function Home() {
         <Carousel
           key={categoria.id}
           category={categoria}
+          videoClickHandler={setMainContainerVideo}
         />
       ))}
 

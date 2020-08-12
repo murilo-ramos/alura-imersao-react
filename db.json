@@ -5,7 +5,7 @@
       "categoriaId": 1,
       "titulo": "Frozen 2 - Minha Intuição",
       "url": "https://www.youtube.com/watch?v=wUX_4mNn22c",
-      "descricao_do_video": "Vídeo completo da música 'Minha Intuição' de Frozen 2, a versão em português da música 'Into The Unknown', escrita pelos ganhadores do Oscar, Kristen Anderson-Lopez e Robert Lopez. "
+      "descricao": "Vídeo completo da música 'Minha Intuição' de Frozen 2, a versão em português da música 'Into The Unknown', escrita pelos ganhadores do Oscar, Kristen Anderson-Lopez e Robert Lopez. "
     },
     {
       "id": 2,
@@ -53,7 +53,7 @@
       "id": 9,
       "categoriaId": 2,
       "titulo": "Patrulha Canina - Super filhotes",
-      "url": "https://www.youtube.com/watch?v=gOxamH3JMJs"
+      "url": "https://www.youtube.com/watch?v=o6u_7n2TGP8"
     },
     {
       "id": 10,
@@ -113,7 +113,7 @@
       "id": 19,
       "categoriaId": 4,
       "titulo": "Pets - A vida secreta dos bichos",
-      "url": "https://www.youtube.com/watch?v=4vzzsQQ48RA"
+      "url": "https://www.youtube.com/watch?v=uDPguRYYLWk"
     },
     {
       "id": 20,
@@ -134,6 +134,13 @@
       "descricao": "Música infantil animada pra fazer a criançada pular.",
       "categoriaId": 4,
       "id": 22
+    },
+    {
+      "titulo": "Moana - De Nada",
+      "url": "https://www.youtube.com/watch?v=oIfXG_kscH4",
+      "descricao": "Vídeo da música 'De Nada' (You're Welcome) do filme Moana, interpretada por Saulo Vasconcellos.",
+      "categoriaId": 1,
+      "id": 23
     }
   ],
   "categorias": [

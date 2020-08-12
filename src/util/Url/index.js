@@ -1,7 +1,7 @@
 function getHost() {
   return window.location.hostname.includes('localhost')
     ? 'http://localhost:8080'
-    : 'https://lauraflix.herokuapp.com';
+    : 'http://192.168.0.162:8080';
 }
 
 function getUrl(path) {
