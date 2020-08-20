@@ -7,7 +7,7 @@ export const VideoContainer = styled.div`
   padding-top: 56.25%;
   
   @media (max-width: 800px) {
-    display: none;
+    /*display: none;*/
   }
 `;
 

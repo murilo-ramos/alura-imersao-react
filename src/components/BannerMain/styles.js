@@ -82,37 +82,6 @@ ContentAreaContainer.Description = styled.p`
   }
 `;
 
-export const WatchButton = styled.button`
-  /*font-family: 'Roboto', sans-serif;*/
-  /*box-sizing: border-box;*/
-  padding: 16px 24px;
-  cursor: pointer;
-
-  
-  /*text-decoration: none;*/
-  /*font-style: normal;*/
-  font-weight: bold;
-  font-size: 16px;
-  outline: none;
-  border-radius: 4px;
-  
-  border: 0;
-  /*border: 1px solid transparent;*/
-  color: var(--black);
-  background: var(--white);
-  /*border-color: var(--black);*/
-
-  margin-left: auto;
-  margin-right: auto;
-
-  display: none;
-  transition: opacity .3s;
-
-  @media (max-width: 800px) {
-    display: block;
-  }
-`;
-
 ContentAreaContainer.Category = styled.h1`
   font-family: Roboto;
   font-style: normal;
