@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const VideoCardContainer = styled.a`
   width: 293px;
   height: 197px;
-  border: 2px solid;
+  border: none;
   
   text-decoration: none;
 

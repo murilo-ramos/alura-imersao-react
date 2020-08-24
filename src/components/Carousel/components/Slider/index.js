@@ -12,19 +12,54 @@ const Container = styled.ul`
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 100%;
+    display: 'flex';
+    flex-direction: 'column';
+    align-items: 'center';
+    justify-content: 'center';
     transform: initial;
     &:before {
       font-size: 30px;
     }
   }
-  
   .slick-prev {
     left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(20, 20, 20, 1) 0%,
+      rgba(20, 20, 20, 1) 10%,
+      rgba(20, 20, 20, 0.1) 80%,
+      rgba(20, 20, 20, 0.1) 100%
+    );
+    &:hover {
+      background: linear-gradient(
+        to right,
+        rgba(20, 20, 20, 1) 0%,
+        rgba(20, 20, 20, 1) 10%,
+        rgba(20, 20, 20, 0.6) 70%,
+        rgba(20, 20, 20, 0.1) 100%
+      );
+    }
   }
   .slick-next {
-    right: 16px;
+    right: 0;
+    background: linear-gradient(
+      to right,
+      rgba(20, 20, 20, 0.1) 0%,
+      rgba(20, 20, 20, 0.1) 20%,
+      rgba(20, 20, 20, 1) 90%,
+      rgba(20, 20, 20, 1) 100%
+    );
+    &:hover {
+      background: linear-gradient(
+        to right,
+        rgba(20, 20, 20, 0.1) 0%,
+        rgba(20, 20, 20, 0.6) 30%,
+        rgba(20, 20, 20, 1) 90%,
+        rgba(20, 20, 20, 1) 100%
+      );
+    }
   }
 `;
 
